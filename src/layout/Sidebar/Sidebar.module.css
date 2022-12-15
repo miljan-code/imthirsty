@@ -1,0 +1,10 @@
+.sidebar {
+  padding: 2rem;
+  padding-left: 0;
+}
+
+.sidebar__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

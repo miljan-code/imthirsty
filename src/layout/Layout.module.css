@@ -1,0 +1,15 @@
+.container {
+  max-width: 120rem;
+  margin: 5rem auto;
+
+  background: var(--color-white);
+  border-radius: 5px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  min-height: 50rem;
+}
+
+.main {
+  display: flex;
+}
