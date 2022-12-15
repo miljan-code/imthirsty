@@ -2,6 +2,7 @@ import { useQuery } from 'react-query';
 import { getCocktails } from '../../api/cocktailsApi';
 
 import SidebarItem from '../../components/SidebarItem/SidebarItem';
+import Loading from '../Loading/Loading';
 import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
@@ -11,8 +12,6 @@ const Sidebar = () => {
     isError,
     error,
   } = useQuery('cocktails', getCocktails);
-
-  const Loading = () => <p>Loading... Please wait</p>;
 
   const ErrorMsg = () => <p>Sorry, something went wrong... {error}</p>;
 

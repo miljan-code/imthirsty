@@ -1,0 +1,19 @@
+.loading {
+  text-align: center;
+}
+
+.loading__img {
+  width: 5rem;
+  height: 5rem;
+  animation: 1.5s ease-in-out infinite spin360;
+}
+
+@keyframes spin360 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

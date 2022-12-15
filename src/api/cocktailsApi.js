@@ -13,6 +13,12 @@ export const getCocktails = async () => {
   return res.data.drinks;
 };
 
+export const getRandomCocktail = async () => {
+  const res = await cocktailsApi.get('/random.php');
+  const [drink] = res.data.drinks;
+  return drink;
+};
+
 export default cocktailsApi;
 
 // filter.php?c=cocktail All cocktails
