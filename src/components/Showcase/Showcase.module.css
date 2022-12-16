@@ -38,5 +38,56 @@
 }
 
 .cocktail__title {
+  color: var(--color-primary-dark);
+  font-size: 3rem;
+  text-transform: uppercase;
   text-align: center;
+
+  margin-top: 3rem;
+}
+
+.cocktail__ingredients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 3rem;
+
+  font-size: 2rem;
+}
+
+.cocktail__ingredients-ings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+
+.cocktail__ingredients-ing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 0.25rem;
+  border-bottom: 1px dotted var(--color-primary-dark);
+}
+
+.cocktail__instructions {
+  display: flex;
+  flex-direction: column;
+
+  margin: 3rem auto 0;
+  width: 75%;
+
+  text-align: center;
+}
+
+.cocktail__instructions h3 {
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+}
+
+.cocktail__instructions p {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
