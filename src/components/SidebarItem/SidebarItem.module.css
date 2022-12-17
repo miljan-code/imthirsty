@@ -34,3 +34,21 @@
   font-size: 1.3rem;
   font-weight: 400;
 }
+
+@media screen and (max-width: 1000px) {
+  .sidebar__item {
+    padding: 0.75rem 2rem 0.75rem 3rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sidebar__item:last-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .sidebar__item:last-child {
+    display: flex;
+  }
+}

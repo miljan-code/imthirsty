@@ -20,12 +20,31 @@ const Header = () => {
     </nav>
   );
 
+  // const MobileHeader = () => (
+  //   <header className={styles.header__mobile}>
+  //     <div className="header__mobile-top">
+  //       <LogoBox />
+  //       <Navigation />
+  //     </div>
+  //     <div className="header__mobile-bot">
+  //       <SearchBar />
+  //     </div>
+  //   </header>
+  // );
+
   return (
-    <header className={styles.header}>
-      <LogoBox />
-      <SearchBar />
-      <Navigation />
-    </header>
+    <>
+      <header className={styles.header}>
+        <LogoBox />
+        <div className={styles.search__box}>
+          <SearchBar />
+        </div>
+        <Navigation />
+      </header>
+      <header className={styles.header__mobile}>
+        <SearchBar />
+      </header>
+    </>
   );
 };
 

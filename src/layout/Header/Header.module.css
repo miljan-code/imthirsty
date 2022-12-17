@@ -41,3 +41,24 @@
 .btn:hover {
   background-color: var(--color-secondary-dark);
 }
+
+.header__mobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .search__box {
+    display: none;
+  }
+
+  .header__mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn {
+    font-size: 1.2rem;
+    padding: 1rem 1.25rem;
+  }
+}

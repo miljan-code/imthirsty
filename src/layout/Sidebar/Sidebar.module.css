@@ -9,3 +9,22 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+@media screen and (max-width: 800px) {
+  .sidebar__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .sidebar__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sidebar__items {
+    grid-template-columns: 1fr;
+  }
+}
