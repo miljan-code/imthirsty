@@ -1,5 +1,7 @@
 import { useQuery } from 'react-query';
 import { getCocktails } from '../../api/cocktailsApi';
+import CocktailContext from '../../context/CocktailContext';
+import { useContext } from 'react';
 
 import SidebarItem from '../../components/SidebarItem/SidebarItem';
 import Loading from '../Loading/Loading';
@@ -11,7 +13,13 @@ const Sidebar = () => {
     isLoading,
     isError,
     error,
-  } = useQuery('cocktails', getCocktails);
+  } = useContext(CocktailContext);
+  // const {
+  //   data: cocktails,
+  //   isLoading,
+  //   isError,
+  //   error,
+  // } = useQuery('cocktails', getCocktails);
 
   const ErrorMsg = () => <p>Sorry, something went wrong... {error}</p>;
 
