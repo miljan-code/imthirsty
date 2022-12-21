@@ -1,16 +1,16 @@
 import styles from './Showcase.module.css';
-import { useQuery } from 'react-query';
-import { getRandomCocktail } from '../../api/cocktailsApi';
 import Loading from '../../layout/Loading/Loading';
 import { keyValuePairsIntoArray, idGenerator } from '../../services/helpers';
+import { useRandomCocktailData } from '../../hooks/useFetchData';
 
 const Showcase = () => {
-  const {
-    data: cocktail,
-    isLoading,
-    isError,
-    error,
-  } = useQuery('randomCocktail', getRandomCocktail);
+  const { data, isLoading, isError, error } = useRandomCocktailData();
+
+  if (isLoading) return <Loading />;
+
+  if (isError) return <p>Something went wrong... {error.message}</p>;
+
+  const [cocktail] = data?.data?.drinks;
 
   const {
     strDrinkThumb: img,
@@ -54,9 +54,7 @@ const Showcase = () => {
 
   return (
     <section className={styles.showcase}>
-      {isLoading && <Loading />}
-      {isError && <p>Something went wrong... {error}</p>}
-      {!isLoading && !isError && <Cocktail />}
+      <Cocktail />
     </section>
   );
 };
