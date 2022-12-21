@@ -6,9 +6,11 @@ import styles from './Sidebar.module.css';
 const Sidebar = () => {
   const { data, isLoading, isError, error } = useCocktailsData();
 
-  const cocktails = data?.data?.drinks;
+  if (isLoading) return <Loading />;
 
-  const ErrorMsg = () => <p>Sorry, something went wrong... {error}</p>;
+  if (isError) return <p>Sorry, something went wrong... {error.message}</p>;
+
+  const cocktails = data?.data?.drinks;
 
   const Items = () => (
     <ul className={styles.sidebar__items}>
@@ -28,9 +30,7 @@ const Sidebar = () => {
 
   return (
     <aside className={styles.sidebar}>
-      {isLoading && <Loading />}
-      {isError && <ErrorMsg />}
-      {!isLoading && !isError && <Items />}
+      <Items />
     </aside>
   );
 };

@@ -1,10 +1,10 @@
 import styles from './Showcase.module.css';
 import Loading from '../../layout/Loading/Loading';
 import { keyValuePairsIntoArray, idGenerator } from '../../services/helpers';
-import { useRandomCocktailData } from '../../hooks/useFetchData';
+import { useCocktailData } from '../../hooks/useFetchData';
 
 const Showcase = () => {
-  const { data, isLoading, isError, error } = useRandomCocktailData();
+  const { data, isLoading, isError, error } = useCocktailData();
 
   if (isLoading) return <Loading />;
 
@@ -16,7 +16,7 @@ const Showcase = () => {
     strDrinkThumb: img,
     strDrink: title,
     strInstructions: instructions,
-  } = cocktail ? cocktail : {};
+  } = cocktail;
 
   const ingredients = keyValuePairsIntoArray(cocktail, 'strIngr');
   const measures = keyValuePairsIntoArray(cocktail, 'strMeasur');

@@ -1,19 +1,22 @@
 import { useQuery } from 'react-query';
-import axios from 'axios';
+import { cocktailsApi } from './fetch-config';
 
-const cocktailsApi = axios.create({
-  baseURL: 'https://the-cocktail-db.p.rapidapi.com',
-  headers: {
-    'X-RapidAPI-Key': import.meta.env.VITE_COCKTAIL_API_KEY,
-    'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com',
-  },
-});
-
+// Fetch popular cocktails
 const fetchCocktails = () => cocktailsApi.get('/popular.php');
-
-const fetchRandomCocktail = () => cocktailsApi.get('/random.php');
 
 export const useCocktailsData = () => useQuery('cocktails', fetchCocktails);
 
+// Fetch random cocktail
+const fetchRandomCocktail = () => cocktailsApi.get('/random.php');
+
 export const useRandomCocktailData = () =>
   useQuery('random-cocktail', fetchRandomCocktail);
+
+// Fetch cocktail by Id
+const fetchCocktail = ({ queryKey }) => {
+  const [_, cocktailId] = queryKey;
+  return cocktailsApi.get(`lookup.php?i=${cocktailId}`);
+};
+
+export const useCocktailData = (cocktailId = 11000) =>
+  useQuery(['cocktail', cocktailId], fetchCocktail);
