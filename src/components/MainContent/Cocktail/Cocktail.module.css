@@ -1,8 +1,3 @@
-.showcase {
-  flex: 1;
-  background-color: var(--color-light-grey);
-}
-
 .cocktail__img-container {
   position: relative;
   background-color: var(--color-text);

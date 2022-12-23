@@ -5,6 +5,7 @@ import './index.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { AppStateProvider } from './context/AppState';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -15,13 +16,13 @@ const queryClient = new QueryClient({
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}>
+    <AppStateProvider>
       <Router>
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
       </Router>
-    </QueryClientProvider>
-  </React.StrictMode>
+    </AppStateProvider>
+  </QueryClientProvider>
 );

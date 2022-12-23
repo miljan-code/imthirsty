@@ -1,0 +1,16 @@
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+}
+
+.header__logo-img {
+  height: 4rem;
+  width: 4rem;
+}
+
+.header__logo-text {
+  font-size: 1.8rem;
+}

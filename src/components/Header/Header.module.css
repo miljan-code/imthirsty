@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-light-grey);
+}
+
+.header__mobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .search__box {
+    display: none;
+  }
+
+  .header__mobile {
+    display: block;
+  }
+}

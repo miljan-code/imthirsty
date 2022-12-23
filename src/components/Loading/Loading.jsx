@@ -1,5 +1,6 @@
-import styles from './Loading.module.css';
 import loadingImg from '../../assets/loadingSpinner.png';
+
+import styles from './Loading.module.css';
 
 const Loading = () => {
   return (
