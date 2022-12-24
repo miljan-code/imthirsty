@@ -1,8 +1,9 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import AppState from '../../../context/AppState';
 import styles from './SearchBar.module.css';
 
 const SearchBar = () => {
+  const inputRef = useRef(null);
   const { searchCocktailsHandler } = useContext(AppState);
 
   return (
@@ -10,6 +11,8 @@ const SearchBar = () => {
       onSubmit={(e) => {
         e.preventDefault();
         searchCocktailsHandler(e.target.querySelector('input').value);
+        inputRef.current.blur();
+        inputRef.current.value = '';
       }}
       className={styles.search__form}
     >
@@ -17,6 +20,7 @@ const SearchBar = () => {
         type="text"
         className={styles.search__input}
         placeholder="Search for cocktails..."
+        ref={inputRef}
       />
       <button className={styles.search__btn}>Search</button>
     </form>

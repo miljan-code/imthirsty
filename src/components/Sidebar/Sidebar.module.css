@@ -2,6 +2,8 @@
   flex-basis: 30%;
   padding: 2rem 0;
   padding-left: 0;
+  max-height: 80rem;
+  overflow-y: auto;
 }
 
 .sidebar__items {
@@ -11,6 +13,10 @@
 }
 
 @media screen and (max-width: 800px) {
+  .sidebar {
+    max-height: 20rem;
+  }
+
   .sidebar__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

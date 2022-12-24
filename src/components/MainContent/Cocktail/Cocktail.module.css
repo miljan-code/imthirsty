@@ -1,3 +1,8 @@
+.cocktail {
+  max-height: 80rem;
+  overflow-y: auto;
+}
+
 .cocktail__img-container {
   position: relative;
   background-color: var(--color-text);

@@ -17,14 +17,13 @@ const Sidebar = () => {
     error,
   } = useSearchCocktails(searchTerm);
 
-  if (isLoading) return <Loading />;
-
   if (isError) return <p>Sorry, something went wrong... {error.message}</p>;
 
   const cocktails = data?.data?.drinks;
 
   return (
     <aside className={styles.sidebar}>
+      {isLoading && <Loading />}
       <ul className={styles.sidebar__items}>
         {cocktails
           ?.slice(0, 10)

@@ -30,6 +30,10 @@ body {
   background-color: var(--color-primary-dark);
 }
 
+a {
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
 }
