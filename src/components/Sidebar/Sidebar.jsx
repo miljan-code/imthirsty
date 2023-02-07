@@ -26,7 +26,6 @@ const Sidebar = () => {
       {isLoading && <Loading />}
       <ul className={styles.sidebar__items}>
         {cocktails
-          ?.slice(0, 10)
           ?.map(({ idDrink, strAlcoholic, strDrink, strDrinkThumb }) => (
             <Link
               key={idDrink}

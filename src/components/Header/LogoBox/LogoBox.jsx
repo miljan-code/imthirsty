@@ -14,10 +14,10 @@ const LogoBox = () => {
     >
       <img
         src={logo}
-        alt="miljan.dev logo"
+        alt="miljan.tech logo"
         className={styles['header__logo-img']}
       />
-      <span className={styles['header__logo-text']}>miljan.dev</span>
+      <span className={styles['header__logo-text']}>miljan.tech</span>
     </div>
   );
 };
